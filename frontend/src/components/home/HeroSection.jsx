@@ -1,9 +1,23 @@
 import { ShoppingBag, Home, User, Globe } from "lucide-react";
 import { useState, useEffect } from "react";
-import heroimage1 from "../assets/heroimage1.png";
+import heroimage1 from "../../assets/heroimage1.png";
+import heroimage2 from "../../assets/heroimage2.png";
+import heroimage3 from "../../assets/heroimage3.png";
 
 export default function HeroSection({ heroimage }) {
     const [isMobile, setIsMobile] = useState(false);
+
+    const images = [heroimage1, heroimage2, heroimage3];
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    // Auto-slide effect
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 3000); // change slide every 3s
+
+        return () => clearInterval(interval); // cleanup
+    }, []);
 
     useEffect(() => {
         const checkIfMobile = () => {
@@ -29,11 +43,29 @@ export default function HeroSection({ heroimage }) {
         <div className="w-full flex flex-col justify-center align-center">
             {/* Hero Image with Overlay Text */}
             <div className="relative overflow-hidden shadow-lg w-full">
-                <img
-                    src={heroimage1}
-                    alt="Hero Banner"
-                    className="w-full h-auto object-cover"
-                />
+                <div className="relative w-full overflow-hidden">
+                    <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                        {images.map((img, index) => (
+                            <img
+                                key={index}
+                                src={img}
+                                alt={`Hero ${index}`}
+                                className="min-w-full h-auto object-cover"
+                            />
+                        ))}
+                    </div>
+
+                    {/* Dot indicators */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        {images.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setCurrentIndex(index)}
+                                className={`h-3 w-3 rounded-full ${currentIndex === index ? 'bg-purple-600' : 'bg-gray-600'} transition-all`}
+                            />
+                        ))}
+                    </div>
+                </div>
 
                 {/* Optional: Add overlay text on the hero image */}
                 <div className="absolute inset-0 md:inset-50  flex flex-col  justify-center items-start p-6 md:p-12">
