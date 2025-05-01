@@ -1,5 +1,6 @@
 import { Search, User, ShoppingCart, Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "../assets/logo.png"; 
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +19,6 @@ export default function Header() {
                         <div className="hidden md:flex items-center space-x-4">
                             <a href="#" className="hover:text-purple-200 transition duration-200">About Us</a>
                             <a href="#" className="hover:text-purple-200 transition duration-200">Contact Us</a>
-                            <a href="#" className="hover:text-purple-200 transition duration-200">Blog</a>
                         </div>
                         <p className="text-center py-1 md:py-0">We deliver to you every day from 7am to 11pm</p>
                         <a href="#" className="hidden md:block hover:text-purple-200 transition duration-200">Order Tracking</a>
@@ -28,7 +28,7 @@ export default function Header() {
 
             {/* Logo & Search bar */}
             <div className="container mx-auto px-4 py-4">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between " >
                     {/* Mobile menu button */}
                     <button
                         className="md:hidden text-gray-700 p-2"
@@ -40,7 +40,11 @@ export default function Header() {
 
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <h1 className="text-xl font-bold text-purple-700">LOGO</h1>
+                        <img
+                            src={logo}
+                            alt="Company Logo"
+                            className="h-12 w-auto"
+                        />
                     </div>
 
                     {/* Search on desktop */}
@@ -105,12 +109,8 @@ export default function Header() {
                         <ul className="py-2">
                             <li><a href="/" className="block py-3 px-4 hover:bg-purple-100 text-gray-800">Home</a></li>
                             <li><a href="#" className="block py-3 px-4 hover:bg-purple-100 text-gray-800">Shop</a></li>
-                            <li><a href="#" className="block py-3 px-4 hover:bg-purple-100 text-gray-800">Fruits and Vegetables</a></li>
-                            <li><a href="#" className="block py-3 px-4 hover:bg-purple-100 text-gray-800">Beverages</a></li>
-                            <li><a href="#" className="block py-3 px-4 hover:bg-purple-100 text-gray-800">Household</a></li>
                             <li><a href="#" className="block py-3 px-4 hover:bg-purple-100 text-gray-800">About Us</a></li>
                             <li><a href="#" className="block py-3 px-4 hover:bg-purple-100 text-gray-800">Contact Us</a></li>
-                            <li><a href="#" className="block py-3 px-4 hover:bg-purple-100 text-gray-800">Blog</a></li>
                             <li><a href="#" className="block py-3 px-4 hover:bg-purple-100 text-gray-800">Order Tracking</a></li>
                         </ul>
                     </div>
