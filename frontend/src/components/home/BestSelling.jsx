@@ -1,21 +1,155 @@
-import { MoveRightIcon } from 'lucide-react'
-import React from 'react'
+import { MoveRight } from "lucide-react";
+import { useRef } from "react";
+import ProductCard from "../ProductCard";
 
-const BestSelling = () => {
-    return (
-        <>
-            <div>
-                <div>
-                    <p>Best Selling</p>
-                    <button>View More<MoveRightIcon /></button>
-                </div>
-                <div>
+// Sample product data - in a real app, this would come from your data source
+const sampleProducts = [
+  {
+    id: 1,
+    name: "Great Value Rising Crust Frozen Pizza, Supreme",
+    rating: 4.5,
+    price: 8.99,
+    originalPrice: 11.99,
+    inStock: true,
+    image: "/api/placeholder/200/200"
+  },
+  {
+    id: 2,
+    name: "Organic Avocados, Bag of 5",
+    rating: 4.8,
+    price: 5.99,
+    originalPrice: 7.99,
+    inStock: true,
+    image: "/api/placeholder/200/200"
+  },
+  {
+    id: 3,
+    name: "Fresh Ground Coffee, Medium Roast, 12oz",
+    rating: 4.9,
+    price: 9.49,
+    originalPrice: 10.99,
+    inStock: true,
+    image: "/api/placeholder/200/200"
+  },
+  {
+    id: 4,
+    name: "Whole Grain Bread, 24oz Loaf",
+    rating: 4.7,
+    price: 3.49,
+    originalPrice: 4.29,
+    inStock: true,
+    image: "/api/placeholder/200/200"
+  },
+  {
+    id: 5,
+    name: "Free-Range Large Eggs, Dozen",
+    rating: 4.6,
+    price: 4.99,
+    originalPrice: 5.99,
+    inStock: false,
+    image: "/api/placeholder/200/200"
+  },
+  {
+    id: 6,
+    name: "Organic Honeycrisp Apples, 3lb Bag",
+    rating: 4.8,
+    price: 6.99,
+    originalPrice: 8.49,
+    inStock: true,
+    image: "/api/placeholder/200/200"
+  },
+  // Add more products as needed
+];
 
-                </div>
+export default function BestSellingProducts() {
+  const scrollRef = useRef(null);
+  
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+  
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section className="py-8 md:py-12 bg-gray-50">
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="flex justify-between items-center mb-6">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Best Selling</h2>
+            <p className="text-gray-600 mt-1">Our most popular products based on sales</p>
+          </div>
+          
+          <a 
+            href="/products/best-selling" 
+            className="hidden md:flex items-center text-purple-700 hover:text-purple-800 font-medium transition duration-200"
+          >
+            View All
+            <MoveRight size={18} className="ml-1" />
+          </a>
+        </div>
+        
+        {/* Products Scroll Controls - Desktop */}
+        <div className="hidden md:flex justify-end mb-4">
+          <button 
+            onClick={scrollLeft}
+            className="p-2 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-purple-50 mr-2 transition duration-200"
+            aria-label="Scroll left"
+          >
+            <MoveRight size={20} className="transform rotate-180" />
+          </button>
+          <button 
+            onClick={scrollRight}
+            className="p-2 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-purple-50 transition duration-200"
+            aria-label="Scroll right"
+          >
+            <MoveRight size={20} />
+          </button>
+        </div>
+        
+        {/* Products Horizontal Scroll */}
+        <div 
+          ref={scrollRef}
+          className="flex overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory scroll-px-4"
+          style={{
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+          }}
+        >
+          {sampleProducts.map((product) => (
+            <div 
+              key={product.id} 
+              className="flex-none w-64 md:w-72 px-2 snap-start"
+            >
+              <ProductCard 
+                productimage={product.image}
+                name={product.name}
+                rating={product.rating}
+                price={product.price}
+                originalPrice={product.originalPrice}
+                inStock={product.inStock}
+              />
             </div>
-
-        </>
-    )
+          ))}
+        </div>
+        
+        {/* Mobile View All Button */}
+        <div className="flex justify-center mt-4 md:hidden">
+          <a 
+            href="/products/best-selling" 
+            className="flex items-center justify-center w-full py-3 rounded-lg border border-purple-700 text-purple-700 font-medium"
+          >
+            View All Products
+            <MoveRight size={18} className="ml-1" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
 }
-
-export default BestSelling

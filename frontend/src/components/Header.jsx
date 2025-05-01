@@ -77,7 +77,7 @@ export default function Header() {
                         </a>
                         <a href="#" className="text-gray-700 hover:text-purple-700 transition duration-200 relative">
                             <ShoppingCart size={24} />
-                            <span className="absolute -top-2 -right-2 bg-purple-700 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                            <span className="absolute -top-2 -right-2 bg-red-700 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                                 0
                             </span>
                         </a>

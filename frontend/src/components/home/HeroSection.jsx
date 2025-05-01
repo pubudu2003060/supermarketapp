@@ -43,7 +43,7 @@ export default function HeroSection({ heroimage }) {
         <div className="w-full flex flex-col justify-center align-center">
             {/* Hero Image with Overlay Text */}
             <div className="relative overflow-hidden shadow-lg w-full">
-                <div className="relative w-full overflow-hidden">
+                <div className="w-full overflow-hidden">
                     <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                         {images.map((img, index) => (
                             <img
@@ -68,7 +68,7 @@ export default function HeroSection({ heroimage }) {
                 </div>
 
                 {/* Optional: Add overlay text on the hero image */}
-                <div className="absolute inset-0 md:inset-50  flex flex-col  justify-center items-start p-6 md:p-12">
+                <div className="absolute inset-0 md:inset-50   flex flex-col justify-center items-start p-6 md:p-12">
                     <h2 className="text-purple-900 text-1xl md:text-5xl font-bold mb-3 md:mb-10 max-w-50 md:max-w-lg">Shopping with us for
                         better quality and the
                         best price</h2>
