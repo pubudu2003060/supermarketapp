@@ -1,5 +1,5 @@
 export const helloExpress = (req, res) => {
-    res.send('Hello express!')
+    throw new Error('Error in helloExpress')
 }
 
 export const search = (req, res) => {

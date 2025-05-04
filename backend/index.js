@@ -11,19 +11,25 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(router, (req, res, next) => {
-  console.log("call a api in user router "+ ++useApiCount)
+app.use('/user', (req, res, next) => {
+  console.log("call a api in user router " + ++useApiCount)
   next()
-})
+}, router)
 
 app.use(express.json())
 
 app.use('/user', router)
 
-app.get('/', (req, res) => {
-  res.send('Hello World')
-}
-)
+app.use((err, req, res, next) => {
+  console.log("error middleware")
+  console.log(err)
+  res.status(500).json({
+    message: "error in server",
+    error: err.message
+  })
+})
+
+app.use('/images', express.static('images'))
 
 app.listen(port, () => {
   console.log(`Server is start on http://localhost:${port}`)

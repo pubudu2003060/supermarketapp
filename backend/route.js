@@ -3,7 +3,6 @@ import { user ,search,helloExpress, addUser, editUser,deleteUser} from './contro
 
 export const router = express.Router()
 
-
 router.get('/', helloExpress)
 
 router.get('/search',search)
