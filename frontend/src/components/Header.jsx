@@ -116,18 +116,12 @@ export default function Header() {
                     </div>
 
                     {/* Desktop menu */}
-                    <ul className="hidden md:flex items-center justify-center py-3 space-x-8">
-                        <li><a href="/" className="text-gray-800 hover:text-purple-700 font-medium transition duration-200">Home</a></li>
-                        <li>
-                            <div className="relative group">
-                                <a href="#" className="text-gray-800 hover:text-purple-700 font-medium transition duration-200 flex items-center">
-                                    Shop
-                                </a>
-                            </div>
-                        </li>
-                        <li><a href="#" className="text-gray-800 hover:text-purple-700 font-medium transition duration-200">Fruits and Vegetables</a></li>
-                        <li><a href="#" className="text-gray-800 hover:text-purple-700 font-medium transition duration-200">Beverages</a></li>
-                        <li><a href="#" className="text-gray-800 hover:text-purple-700 font-medium transition duration-200">Household</a></li>
+                    <ul className="hidden md:flex items-center justify-center py-3 space-x-15">
+                        <li><a href="/" className="text-gray-800 hover:text-purple-700 text-[1.2rem] font-medium transition duration-200">Home</a></li>
+                        <li><a href="/" className="text-gray-800 hover:text-purple-700 text-[1.2rem] font-medium  transition duration-200">Shop</a></li>
+                        <li><a href="#" className="text-gray-800 hover:text-purple-700 text-[1.2rem] font-medium  transition duration-200">Fruits and Vegetables</a></li>
+                        <li><a href="#" className="text-gray-800 hover:text-purple-700 text-[1.2rem] font-medium  transition duration-200">Beverages</a></li>
+                        <li><a href="#" className="text-gray-800 hover:text-purple-700 text-[1.2rem] font-medium  transition duration-200">Household</a></li>
                     </ul>
                 </div>
             </nav>

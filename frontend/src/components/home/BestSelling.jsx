@@ -8,7 +8,7 @@ const sampleProducts = [
         id: 1,
         name: "Great Value Rising Crust Frozen Pizza, Supreme",
         rating: 2.5,
-        price: 8.99,
+        price: 10.99,
         originalPrice: 11.99,
         inStock: true,
         image: "/api/placeholder/200/200"
@@ -17,7 +17,7 @@ const sampleProducts = [
         id: 2,
         name: "Organic Avocados, Bag of 5",
         rating: 4.8,
-        price: 5.99,
+        price: 7.99,
         originalPrice: 7.99,
         inStock: true,
         image: "/api/placeholder/200/200"
@@ -35,7 +35,7 @@ const sampleProducts = [
         id: 4,
         name: "Whole Grain Bread, 24oz Loaf",
         rating: 4.7,
-        price: 3.49,
+        price: 4.49,
         originalPrice: 4.29,
         inStock: true,
         image: "/api/placeholder/200/200"
@@ -44,7 +44,7 @@ const sampleProducts = [
         id: 5,
         name: "Free-Range Large Eggs, Dozen",
         rating: 4.6,
-        price: 4.99,
+        price: 5.99,
         originalPrice: 5.99,
         inStock: false,
         image: "/api/placeholder/200/200"
@@ -53,14 +53,14 @@ const sampleProducts = [
         id: 6,
         name: "Organic Honeycrisp Apples, 3lb Bag",
         rating: 4.8,
-        price: 6.99,
+        price: 9.99,
         originalPrice: 8.49,
         inStock: true,
         image: "/api/placeholder/200/200"
     },
 ];
 
-export default function BestSellingProducts() {
+export default function BeatSelling() {
     const scrollRef = useRef(null);
 
     const scrollLeft = () => {
@@ -81,8 +81,8 @@ export default function BestSellingProducts() {
                 {/* Section Header */}
                 <div className="flex justify-between items-center mb-6">
                     <div>
-                        <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Discount Items</h2>
-                        <p className="text-gray-600 mt-1">Our most popular products based on sales</p>
+                        <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Best Selling Items</h2>
+                        <p className="text-gray-600 mt-1">Our most selling products based on sales</p>
                     </div>
 
                     <a

@@ -50,7 +50,7 @@ export default function HeroSection({ heroimage }) {
                                 key={index}
                                 src={img}
                                 alt={`Hero ${index}`}
-                                className="min-w-full h-auto object-cover"
+                                className="min-w-full h-auto object-cover object-right"
                             />
                         ))}
                     </div>
@@ -68,13 +68,13 @@ export default function HeroSection({ heroimage }) {
                 </div>
 
                 {/* Optional: Add overlay text on the hero image */}
-                <div className="absolute inset-0 md:inset-50   flex flex-col justify-center items-start p-6 md:p-12">
-                    <h2 className="text-purple-900 text-1xl md:text-5xl font-bold mb-3 md:mb-10 max-w-50 md:max-w-lg">Shopping with us for
+                <div className=" absolute inset-0 md:inset-50   flex flex-col justify-center items-start p-6 md:p-12">
+                    <h2 className="text-purple-900 text-[1.4rem] md:text-5xl font-bold mb-3 md:mb-10 max-w-50 md:max-w-lg">Shopping with us for
                         better quality and the
                         best price</h2>
-                    <p className="text-purple-500 hidden md:block text-sm md:text-lg mb-4 max-w-md">We have prepared special discounts for you on grocery products.
+                    <p className="hidden md:block text-purple-500  text-sm md:text-lg mb-4 max-w-md">We have prepared special discounts for you on grocery products.
                         Don't miss these opportunities...</p>
-                    <button className="bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg transition duration-300 transform hover:scale-105">
+                    <button className="hidden md:block bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg transition duration-300 transform hover:scale-105">
                         Shop Now
                     </button>
                 </div>

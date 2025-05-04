@@ -1,13 +1,21 @@
 import React from 'react'
 import HeroSection from '../components/home/HeroSection'
-import BestSelling from '../components/home/BestSelling'
-import ProductCard from '../components/ProductCard'
+import DiscountProducts from '../components/home/DiscountProducts'
+import MiddleBar from '../components/home/MiddleBar'
+import BeatSelling from '../components/home/BestSelling'
+import ShopByBrand from '../components/home/ShopByBrand'
+import Footer from '../components/Footer'
+
 
 const Home = () => {
   return (
     <>
-    <HeroSection></HeroSection>
-    <BestSelling></BestSelling>
+      <HeroSection></HeroSection>
+      <DiscountProducts></DiscountProducts>
+      <MiddleBar></MiddleBar>
+      <BeatSelling></BeatSelling>
+      <ShopByBrand></ShopByBrand>
+      <Footer></Footer>
     </>
   )
 }
