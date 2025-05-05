@@ -135,11 +135,6 @@ export default function DiscountProducts() {
                     {sampleProducts.map((product) => (
                         <div 
                             key={product.id}
-                            className={`snap-start flex-none w-[280px] rounded-lg overflow-hidden ${
-                                darkMode 
-                                ? 'bg-gray-800 border border-gray-700 hover:border-purple-500' 
-                                : 'bg-white border border-gray-200 hover:border-purple-300 hover:shadow-md'
-                            } transition duration-300`}
                         >
                             <ProductCard
                                 productimage={product.image}
