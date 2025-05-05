@@ -1,12 +1,18 @@
 import React from 'react';
 import middlebar from '../../assets/middlebar.png';
+import { ThemeContext } from '../ThemeContext.component';
+import { useContext } from 'react';
+
 
 const MiddleBar = () => {
+
+  const { darkMode } = useContext(ThemeContext);
+
   return (
-    <div className="relative mb-10 ">
+    <div className={`relative py-8 md:py-12 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
       <img src={middlebar} alt="Health & Safety Banner" className="w-full object-right object-cover  md:object-cover h-30 md:h-auto" />
       
-      <div className=" absolute inset-0 flex flex-col justify-center  px-4 sm:px-8">
+      <div className=" absolute inset-0 flex flex-col justify-center  ">
         <p className= "text-orange-600 font-bold text-lg sm:text-2xl md:text-3xl lg:text-4xl">
           In store or online, your health & safety is our top priority
         </p>

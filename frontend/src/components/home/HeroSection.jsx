@@ -73,7 +73,7 @@ export default function HeroSection() {
     ];
 
     return (
-        <div className={`w-full flex flex-col justify-start transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+        <div className={` w-full flex flex-col justify-start transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
             {/* Hero Image with Overlay Text */}
             <div
                 className="relative overflow-hidden shadow-lg w-full"

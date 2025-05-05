@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from './ThemeContext.component';
 
 const Footer = () => {
+
+    const {darkMode} = useContext(ThemeContext)
     return (
-        <footer style={{ backgroundColor: '#333', color: '#fff', padding: '20px 0', textAlign: 'center' }}>
+        <footer class={`py-8 md:py-12 ${darkMode ? 'bg-gray-900' : 'bg-gray-50' }`} >
             <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div style={{ flex: '1 1 200px', marginBottom: '10px' }}>
