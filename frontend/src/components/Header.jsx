@@ -1,11 +1,13 @@
 import { Search, User, ShoppingCart, Menu, X, Sun, Moon } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import logo from "../assets/logo.png";
+import { ThemeContext } from "./ThemeContext.component";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
-    const [darkMode, setDarkMode] = useState(false);
+    
+    const {darkMode, setDarkMode} = useContext(ThemeContext);
 
     // Check user's preferred color scheme on mount
     useEffect(() => {
