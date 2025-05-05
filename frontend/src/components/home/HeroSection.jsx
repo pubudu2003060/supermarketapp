@@ -90,7 +90,7 @@ export default function HeroSection() {
                                 key={index}
                                 src={img}
                                 alt={`Hero ${index + 1}`}
-                                className="min-w-full h-full object-cover object-right-top"
+                                className={`min-w-full h-full object-cover object-right-top ${darkMode ? 'filter brightness-75' : 'filter brightness-100'}`}
                             />
                         ))}
                     </div>
