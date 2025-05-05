@@ -9,32 +9,9 @@ export default function Header() {
     
     const {darkMode, setDarkMode} = useContext(ThemeContext);
 
-    // Check user's preferred color scheme on mount
-    useEffect(() => {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setDarkMode(true);
-        }
-
-        // Add listener for changes
-        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        const handleChange = (e) => setDarkMode(e.matches);
-        mediaQuery.addEventListener('change', handleChange);
-
-        return () => mediaQuery.removeEventListener('change', handleChange);
-    }, []);
-
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
     const toggleTheme = () => setDarkMode(!darkMode);
-
-    // Apply theme to document
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    }, [darkMode]);
 
     return (
         <header className={`w-full transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
@@ -83,7 +60,7 @@ export default function Header() {
                                     placeholder="Search for products..."
                                     className={`w-full py-2 px-4 pr-10 rounded-lg ${darkMode
                                             ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:ring-purple-500'
-                                            : 'bg-white border-gray-300 focus:ring-purple-600'
+                                            : 'bg-white border-gray-300 focus:ring-purple-600 placeholder-gray-400'
                                         } focus:outline-none focus:ring-2 focus:border-transparent`}
                                 />
                                 <button className={`absolute right-2 top-1/2 transform -translate-y-1/2 ${darkMode ? 'text-gray-400 hover:text-purple-400' : 'text-gray-500 hover:text-purple-700'
