@@ -77,7 +77,7 @@ export default function DiscountProducts() {
     };
 
     return (
-        <section className={` py-8 md:py-12 transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+        <section className={` transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
             <div className="container mx-auto px-4">
                 {/* Section Header */}
                 <div className="flex justify-between items-center mb-6">

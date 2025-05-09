@@ -7,38 +7,29 @@ import {
     Mail,
     Phone,
     MapPin,
-    CreditCard,
     ShieldCheck
 } from "lucide-react";
 
-import logo from "../assets/logo.png"; // Assuming you have a logo asset
+import logo from "../assets/logo.png";
+import visa from "../assets/payment/visa.png";
+import mastercard from "../assets/payment/mastercard.png";
+import paypal from "../assets/payment/paypal.png";
+import applepay from "../assets/payment/applepay.png";
+
 import { ThemeContext } from "./ThemeContext.component";
 
 export default function Footer() {
     const { darkMode } = useContext(ThemeContext);
-    const [email, setEmail] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle newsletter subscription logic
-        console.log("Subscribed email:", email);
-        setEmail("");
-        // Add actual API call here
-    };
-
-    // Payment method images (you should replace these with actual payment method logos)
     const paymentMethods = [
-        { name: "Visa", icon: "../assets/payment/visa.png" },
-        { name: "Mastercard", icon: "../assets/payment/mastercard.png" },
-        { name: "PayPal", icon: "../assets/payment/paypal.png" },
-        { name: "Apple Pay", icon: "../assets/payment/applepay.png" },
+        { name: "Visa", icon: visa },
+        { name: "Mastercard", icon: mastercard },
+        { name: "PayPal", icon: paypal },
+        { name: "Apple Pay", icon: applepay },
     ];
 
     return (
-        <footer className={`w-full transition-colors duration-300 ${darkMode ? 'bg-black/90 text-white' : 'bg-[#E6E6FA] text-gray-800'
-            }`}>
-            {/* Top section with newsletter */}
-
+        <footer className={`w-full transition-colors duration-300 ${darkMode ? 'bg-black/90 text-white' : 'bg-black/10 text-gray-800'}`}>
 
             {/* Main footer content */}
             <div className="container mx-auto py-10 px-4 md:px-6">
@@ -76,10 +67,10 @@ export default function Footer() {
 
                     {/* Column 2: Shop Categories */}
                     <div>
-                        <h4 className={`font-semibold text-lg mb-4 ${darkMode ? 'text-[#DA70D6]' : 'text-[#7851A9]'
+                        <h4 className={`font-semibold text-lg mb-4 ${darkMode ? 'text-purple-300' : 'text-purple-800'
                             }`}>Shop Categories</h4>
                         <ul className="space-y-2">
-                            {["Grocery", "Household", "Personal Care", "Electronics", "Clothing", "Home Decor", "Specialty Items", "Sale Items"].map((category, index) => (
+                            {["Grocery", "Household", "Personal Care",  "Specialty Items"].map((category, index) => (
                                 <li key={index}>
                                     <a
                                         href="#"
@@ -97,13 +88,12 @@ export default function Footer() {
 
                     {/* Column 3: Customer Service */}
                     <div>
-                        <h4 className={`font-semibold text-lg mb-4 ${darkMode ? 'text-[#DA70D6]' : 'text-[#7851A9]'
+                        <h4 className={`font-semibold text-lg mb-4 ${darkMode ? 'text-purple-300' : 'text-purple-800'
                             }`}>Customer Service</h4>
                         <ul className="space-y-2">
                             {[
                                 "My Account",
                                 "Order History",
-                                "Wishlist",
                                 "Shipping Policy",
                                 "Returns & Refunds",
                                 "FAQs",
@@ -127,12 +117,12 @@ export default function Footer() {
 
                     {/* Column 4: Contact Us */}
                     <div>
-                        <h4 className={`font-semibold text-lg mb-4 ${darkMode ? 'text-[#DA70D6]' : 'text-[#7851A9]'
+                        <h4 className={`font-semibold text-lg mb-4 ${darkMode ? 'text-purple-300' : 'text-purple-800'
                             }`}>Contact Us</h4>
                         <ul className="space-y-3">
                             <li className="flex items-start">
-                                <MapPin size={18} className={`mr-2 flex-shrink-0 mt-0.5 ${darkMode ? 'text-[#DA70D6]' : 'text-[#7851A9]'
-                                    }`} />
+                                <MapPin size={18} className={`mr-2 flex-shrink-0 mt-0.5 ${darkMode ? 'text-purple-300' : 'text-purple-800'
+                            }`} />
                                 <span className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'
                                     }`}>
                                     123 Shopping Ave, <br />
@@ -140,8 +130,8 @@ export default function Footer() {
                                 </span>
                             </li>
                             <li className="flex items-center">
-                                <Phone size={18} className={`mr-2 ${darkMode ? 'text-[#DA70D6]' : 'text-[#7851A9]'
-                                    }`} />
+                                <Phone size={18} className={`mr-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'
+                            }`} />
                                 <a
                                     href="tel:+11234567890"
                                     className={`text-sm transition-colors ${darkMode
@@ -153,8 +143,8 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li className="flex items-center">
-                                <Mail size={18} className={`mr-2 ${darkMode ? 'text-[#DA70D6]' : 'text-[#7851A9]'
-                                    }`} />
+                                <Mail size={18} className={`mr-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'
+                            }`} />
                                 <a
                                     href="mailto:support@yourstore.com"
                                     className={`text-sm transition-colors ${darkMode
@@ -162,15 +152,15 @@ export default function Footer() {
                                         : 'text-gray-600 hover:text-[#7851A9]'
                                         }`}
                                 >
-                                    support@yourstore.com
+                                    shoppinglk@gmail.com
                                 </a>
                             </li>
                         </ul>
 
                         {/* Store Hours */}
                         <div className="mt-6">
-                            <h5 className={`font-medium mb-2 ${darkMode ? 'text-[#DA70D6]' : 'text-[#7851A9]'
-                                }`}>Store Hours</h5>
+                            <h5 className={`font-medium mb-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'
+                            }`}>Store Hours</h5>
                             <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'
                                 }`}>
                                 Monday - Friday: 9AM - 8PM<br />
@@ -182,33 +172,27 @@ export default function Footer() {
                 </div>
 
                 {/* Payment Methods */}
-                <div className={`mt-10 pt-6 border-t ${darkMode ? 'border-gray-700' : 'border-purple-200'
+                <div className={`mt-10 pt-6 border-t ${darkMode ? 'text-gray-400' : 'border-gray-500'
                     }`}>
                     <div className="flex flex-col md:flex-row items-center justify-between">
                         <div className="mb-4 md:mb-0">
                             <h5 className={`text-sm font-medium mb-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'
                                 }`}>Accepted Payment Methods</h5>
                             <div className="flex space-x-3">
-                                {/* Replace with actual payment icons */}
-                                <div className={`p-2 rounded ${darkMode ? 'bg-gray-800' : 'bg-white'
-                                    }`}>
-                                    <CreditCard size={24} className={
-                                        darkMode ? 'text-[#DA70D6]' : 'text-[#7851A9]'
-                                    } />
-                                </div>
-                                <div className={`p-2 rounded ${darkMode ? 'bg-gray-800' : 'bg-white'
-                                    }`}>
-                                    <ShieldCheck size={24} className={
-                                        darkMode ? 'text-[#DA70D6]' : 'text-[#7851A9]'
-                                    } />
-                                </div>
-                                {/* Add more payment icons as needed */}
+                                {paymentMethods.map((method, index) => (
+                                    <img
+                                        key={index}
+                                        src={method.icon}
+                                        alt={method.name}
+                                        className="h-8 w-auto"
+                                    />
+                                ))}
                             </div>
                         </div>
 
                         <div className="flex items-center">
-                            <ShieldCheck size={20} className={`mr-2 ${darkMode ? 'text-[#DA70D6]' : 'text-[#7851A9]'
-                                }`} />
+                            <ShieldCheck size={20} className={`mr-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'
+                            }`} />
                             <span className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'
                                 }`}>
                                 Secure Payment Processing
@@ -218,10 +202,10 @@ export default function Footer() {
                 </div>
 
                 {/* Copyright */}
-                <div className={`mt-6 pt-4 border-t text-center ${darkMode ? 'border-gray-700 text-gray-400' : 'border-purple-200 text-gray-500'
+                <div className={`mt-6 pt-4 border-t text-center ${darkMode ? 'text-gray-400 text-gray-400' : 'border-gray-500 text-gray-500'
                     }`}>
                     <p className="text-sm">
-                        © {new Date().getFullYear()} Your Store Name. All rights reserved.
+                        © {new Date().getFullYear()} Shopping.lk | All rights reserved.
                     </p>
                 </div>
             </div>
