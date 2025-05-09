@@ -141,27 +141,27 @@ export default function Header({ navigation }) {
                                     }`}>Shop</Link>
                             </li>
                             <li>
-                                <Link to={'/shop'} className={`block py-3 px-4 ${darkMode ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-800 hover:bg-purple-100'
+                                <Link to={'/'} className={`block py-3 px-4 ${darkMode ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-800 hover:bg-purple-100'
                                     }`}>Fruits and Vegetables</Link>
                             </li>
                             <li>
-                                <Link to={'/shop'} className={`block py-3 px-4 ${darkMode ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-800 hover:bg-purple-100'
+                                <Link to={'/'} className={`block py-3 px-4 ${darkMode ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-800 hover:bg-purple-100'
                                     }`}>Beverages</Link>
                             </li>
                             <li>
-                                <Link to={'/shop'} className={`block py-3 px-4 ${darkMode ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-800 hover:bg-purple-100'
+                                <Link to={'/'} className={`block py-3 px-4 ${darkMode ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-800 hover:bg-purple-100'
                                     }`}>Household</Link>
                             </li>
                             <li>
-                                <Link to={'/shop'} className={`block py-3 px-4 ${darkMode ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-800 hover:bg-purple-100'
+                                <Link to={'/'} className={`block py-3 px-4 ${darkMode ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-800 hover:bg-purple-100'
                                     }`}>About Us</Link>
                             </li>
                             <li>
-                                <Link to={'/shop'} className={`block py-3 px-4 ${darkMode ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-800 hover:bg-purple-100'
+                                <Link to={'/'} className={`block py-3 px-4 ${darkMode ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-800 hover:bg-purple-100'
                                     }`}>Contact Us</Link>
                             </li>
                             <li>
-                                <Link to={'/shop'} className={`block py-3 px-4 ${darkMode ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-800 hover:bg-purple-100'
+                                <Link to={'/'} className={`block py-3 px-4 ${darkMode ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-800 hover:bg-purple-100'
                                     }`}>Order Tracking</Link>
                             </li>
                         </ul>
@@ -195,26 +195,10 @@ export default function Header({ navigation }) {
                                     } transition duration-200`}>Beverages</Link>
                             </li>
                             <li>
-                                <Link to={'/shop'} className={`block py-3 px-4 ${darkMode ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-800 hover:bg-purple-100'
-                                    }`}>Household</Link>
-                            </li>
-                            <li>
                                 <Link to={'/shop'} className={`font-medium text-lg ${darkMode
                                     ? 'text-gray-200 hover:text-purple-400'
                                     : 'text-gray-800 hover:text-purple-700'
-                                    } transition duration-200`}>About Us</Link>
-                            </li>
-                            <li>
-                                <Link to={'/shop'} className={`font-medium text-lg ${darkMode
-                                    ? 'text-gray-200 hover:text-purple-400'
-                                    : 'text-gray-800 hover:text-purple-700'
-                                    } transition duration-200`}>Contact Us</Link>
-                            </li>
-                            <li>
-                                <Link to={'/shop'} className={`font-medium text-lg ${darkMode
-                                    ? 'text-gray-200 hover:text-purple-400'
-                                    : 'text-gray-800 hover:text-purple-700'
-                                    } transition duration-200`}>Order Tracking</Link>
+                                    } transition duration-200`}>Household</Link>
                             </li>
                         </ul>
                     </div>

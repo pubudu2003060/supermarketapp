@@ -15,7 +15,6 @@ const Home = () => {
       <MiddleBar></MiddleBar>
       <BeatSelling></BeatSelling>
       <ShopByBrand></ShopByBrand>
-      <Footer></Footer>
     </>
   )
 }
